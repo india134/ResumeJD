@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Resume Analyzer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8f9fa; }
+    .navbar { background: linear-gradient(90deg, #667eea, #764ba2); }
+    .navbar-brand, .nav-link { color: #fff !important; font-weight: 600; }
+    .card { border-radius: 15px; box-shadow: 0px 4px 12px rgba(0,0,0,0.1); }
+    .btn-analyze { background: #667eea; border: none; }
+    .btn-analyze:hover { background: #764ba2; }
+    .results { background: #fff; border-radius: 12px; padding: 20px; margin-top: 20px; box-shadow: 0px 4px 12px rgba(0,0,0,0.1); }
+    textarea { resize: none; }
+    .section-title { font-weight: 600; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">📊 Resume Skill Analyzer</a>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="card p-4">
+      <h3 class="mb-3">Upload Resume & Job Description</h3>
+      <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Job Description</label>
+          <textarea name="jd_text" rows="5" class="form-control" placeholder="Paste Job Description here..." required></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Upload Resume (PDF)</label>
+          <input type="file" name="resume" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">User Type</label>
+          <select name="user_type" class="form-select">
+            <option value="candidate">Candidate</option>
+            <option value="hr">HR</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-analyze w-100">🚀 Analyze</button>
+      </form>
+    </div>
+
+    {% if scores and details and report %}
+    <div class="results">
+      <h4>📌 Analysis Report</h4>
+      <div>{{ report|safe }}</div>
+      <hr>
+
+      <h5>🔢 Scores</h5>
+      <ul>
+        <li><b>Skills:</b> {{ (scores.skills * 100)|round(1) }}%</li>
+        <li><b>Projects:</b> {{ (scores.projects * 100)|round(1) }}%</li>
+        <li><b>Experience:</b> {{ (scores.experience * 100)|round(1) }}%</li>
+        <li><b>Qualifications:</b> {{ (scores.qualifications * 100)|round(1) }}%</li>
+        <li><b>Overall:</b> {{ (scores.overall * 100)|round(1) }}%</li>
+      </ul>
+
+      <hr>
+      <h5>📋 Skill Gap & Demonstration Analysis</h5>
+
+      <div class="section-title">Overall Missing Skills:</div>
+      {% if details.missing_skills %}
+        <ul>
+          {% for s in details.missing_skills %}
+            <li>{{ s }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No overall skill gaps were found!</p>
+      {% endif %}
+      
+      
+      
+      
+
+  <div class="section-title"> skills missing in Projects Totally:</div>
+       {% if details.missing_project_skills %}
+        <ul>
+          {% for s in details.missing_project_skills %}
+            <li>{{ s }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>All relevant skills are demonstrated in project descriptions.</p>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
+
+
+

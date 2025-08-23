@@ -1,0 +1,103 @@
+{
+  "Data Science & Analysis": [
+    "data science",
+    "data analysis",
+    "statistical analysis",
+    "statistics",
+    "probability",
+    "a/b testing",
+    "hypothesis testing",
+    "eda",
+    "exploratory data analysis",
+    "pandas",
+    "optimization"
+  ],
+  "Machine Learning": [
+    "machine learning",
+    "regression",
+    "classification",
+    "clustering",
+    "scikit-learn",
+    "numpy",
+    "scipy",
+    "feature engineering",
+    "dimensionality reduction",
+    "natural language processing",
+    "nlp",
+    "computer vision",
+    "time series",
+    "forecasting",
+    "xgboost",
+    "lightgbm",
+    "catboost",
+    "Logistic Regression",
+    "Random Forest",
+    "Gradient Boosting",
+    "SVM",
+    "Naive Bayes"
+
+  ],
+  "Deep Learning": [
+    "deep learning",
+    "neural networks",
+    "tensorflow",
+    "pytorch",
+    "keras",
+    "cnn",
+    "rnn",
+    "lstm",
+    "transformers",
+    "gpt",
+    "segmentation"
+  ],
+  "Data Engineering": [
+    "data engineering",
+    "etl",
+    "data pipelines",
+    "data warehousing",
+    "apache spark",
+    "pyspark",
+    "hadoop",
+    "airflow"
+  ],
+  "Data Visualization & BI": [
+    "data visualization",
+    "business intelligence",
+    "tableau",
+    "power bi",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "dashboards"
+  ],
+  "Cloud & MLOps": [
+    "mlops",
+    "cloud",
+    "aws",
+    "azure",
+    "gcp",
+    "docker",
+    "kubernetes",
+    "ci/cd",
+    "model deployment",
+    "sagemaker"
+  ],
+  "Programming & Databases": [
+    "python",
+    "r programming",
+    "sql",
+    "java",
+    "scripting",
+    "nosql",
+    "mongodb",
+    "dbms"
+  ],
+  "Software Engineering": [
+    "git",
+    "version control",
+    "algorithms",
+    "data structures"
+  ]
+}
+
+
